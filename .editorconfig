@@ -4,6 +4,6 @@ insert_final_newline = true
 charset = utf-8
 indent_style = tab
 
-[*.yml,.travis.yml]
+[{*.yml,.travis.yml,package.json}]
 idennt_size = 2
 indent_style = space
