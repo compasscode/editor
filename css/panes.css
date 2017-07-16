@@ -1,0 +1,73 @@
+.editor, .output {
+	width: calc((100% - 8px) * 0.5);
+}
+
+.editor-panel {
+	width: 100%;
+	height: calc((100% - 72px) * 0.333 + 24px);
+	overflow: hidden;
+	position: relative;
+}
+
+.CodeMirror {
+	position: absolute;
+	top: 24px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: auto;
+}
+
+.editor-panel-header {
+	background: #ddd;
+	height: 24px;
+	padding-left: 16px;
+	cursor: ns-resize;
+}
+
+.editor-html-header {
+	cursor: default;
+}
+
+.output {
+	display: flex;
+	align-items: stretch;
+}
+
+.output-frame {
+	width: 100%;
+	border: none;
+}
+
+.editorOutputResizer {
+	width: 8px;
+	background: #ccc;
+	cursor: ew-resize;
+	position: relative;
+}
+
+.editorOutputResizer::before {
+	display: block;
+	content: " ";
+	width: 14px;
+	height: 28px;
+	border-radius: 999px;
+	background: #ccc;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.editorOutputResizer::after {
+	display: block;
+	content: " ";
+	width: 4px;
+	height: 16px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-right: 1px solid #aaa;
+	border-left: 1px solid #aaa;
+}
