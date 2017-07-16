@@ -12,4 +12,5 @@ deploy:
   github_token: $GITHUB_TOKEN # set in travis dashboard
   on:
     branch: master
+  script: yarn run build && git add -f assets/
 
