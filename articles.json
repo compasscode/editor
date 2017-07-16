@@ -1,0 +1,38 @@
+[
+	{
+		"title": "How to change font size with CSS",
+		"keywords": ["font", "text", "words", "size"],
+		"content": "This is the <b>article content</b>.",
+		"category": "css"
+	},
+	{
+		"title": "How to change text color with CSS",
+		"keywords": ["font", "text", "words", "color"],
+		"content": "This is the <b>article content</b>.",
+		"category": "css"
+	},
+	{
+		"title": "How to change element size with CSS",
+		"keywords": ["element", "width", "height", "size", "box"],
+		"content": "This is the <b>article content</b>.",
+		"category": "css"
+	},
+	{
+		"title": "How to add a paragraph in HTML",
+		"keywords": ["text", "words", "paragraph", "p"],
+		"content": "This is the <b>article content</b>.",
+		"category": "html"
+	},
+	{
+		"title": "How to add a header in HTML",
+		"keywords": ["header", "title", "text", "h1", "h2", "h3", "h4", "h5", "h6"],
+		"content": "This is the <b>article content</b>.",
+		"category": "html"
+	},
+	{
+		"title": "How to change background color with CSS",
+		"keywords": ["background", "color", "backgroud-color"],
+		"content": "This is the <b>article content</b>.",
+		"category": "css"
+	}
+]

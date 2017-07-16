@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Editor | Program House</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.2/codemirror.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.2/mode/xml/xml.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.2/mode/css/css.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.2/mode/javascript/javascript.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.2/addon/edit/matchbrackets.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.2/codemirror.min.css">
+	<link rel="stylesheet" href="editor.css">
+</head>
+<body>
+	<div class="nav">
+		<a href="#" class="nav-branding">
+			<svg class="nav-branding-compass" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="40" width="48" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 48 40.000001">
+				<metadata>
+					<rdf:RDF>
+						<cc:Work rdf:about="">
+							<dc:format>image/svg+xml</dc:format>
+							<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+							<dc:title/>
+						</cc:Work>
+					</rdf:RDF>
+				</metadata>
+				<g fill="#fff">
+					<path d="m24 0c-13.255 0-24 7.4354-24 16.607 0 3.3805 0.01899 4.5592 0 6.7852-0.000223 9.172 10.745 16.607 24 16.607s24-7.4354 24-16.607v-6.7852c0.00022-9.172-10.745-16.607-24-16.607zm0 4a20 12 0 0 1 20 12 20 12 0 0 1 -20 12 20 12 0 0 1 -20 -12 20 12 0 0 1 20 -12z"/>
+					<g class="nav-branding-compass-needle" fill-rule="evenodd">
+						<path d="m18.364 16.08h9.6833l-4.8417-14.525z" stroke="#fff" stroke-width=".096833"/>
+						<path opacity=".5" d="m18.364 16.08h9.6833l-4.8417 14.525z"/>
+					</g>
+				</g>
+			</svg>
+		</a>
+		<input class="nav-titleInput" type="text" placeholder="Untitled Project" />
+		<button class="nav-saveButton">Save</button>
+		<button class="nav-shareButton">Share</button>
+		<div class="nav-userIcon">
+			<img class="nav-userIcon-img" src="https://cdn2.scratch.mit.edu/get_image/user/907223_90x90.png">
+			<div class="nav-userIcon-notificationCount visible"></div>
+			<div class="nav-userDropdown nav-userDropdown_hidden">
+				<div class="nav-userDropdown-accountLinks">
+					<a href="#" class="nav-userDropdown-accountLinks-profile">My Profile</a>
+					<a href="#" class="nav-userDropdown-accountLinks-signOut">Sign Out</a>
+				</div>
+				<div class="notifications">
+					<div class="notifications-header">Notifications</div>
+					<div class="notifications-notes">
+						<a class="notifications-notes-note">@Username loved your project Project Title</a>
+						<a class="notifications-notes-note">@wizzwizz7 commented on your project Project Title</a>
+						<a class="notifications-notes-note">@gtoal responded to your comment on "Awesome Applejuice"</a>
+						<a class="notifications-notes-note">Super Swell Project has been viewed over 10,000 times!</a>
+						<a class="notifications-notes-note">@griffpatch is now following you.</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="help help_open">
+		<div class="help-tabs">
+			<div class="help-tabs-tab help-tabs-tab_selected">Tutorials</div>
+			<div class="help-tabs-tab">Reference</div>
+		</div>
+		<input class="help-searchBox" type="text" placeholder="Enter what you'd like to know about...">
+		<div class="help-searchFilters">
+			<input type="checkbox" class="help-searchFilters-checkbox" id="filter-html" checked><label class="help-searchFilters-label" for="filter-html">HTML</label>
+			<input type="checkbox" class="help-searchFilters-checkbox" id="filter-css" checked><label class="help-searchFilters-label" for="filter-css">CSS</label>
+			<input type="checkbox" class="help-searchFilters-checkbox" id="filter-js" checked><label class="help-searchFilters-label" for="filter-js">JS</label>
+		</div>
+		<div class="help-searchResults"></div>
+	</div>
+	<div class="pageInner">
+		<div class="editor">
+			<div class="editor-panel editor-html">
+				<div class="editor-panel-header editor-html-header">HTML</div>
+				<textarea class="editor-html-input"></textarea>
+			</div>
+			<div class="editor-panel editor-css">
+				<div class="editor-panel-header editor-css-header">CSS</div>
+				<textarea class="editor-css-input"></textarea>
+			</div><div class="editor-panel editor-js">
+				<div class="editor-panel-header editor-js-header">JS</div>
+				<textarea class="editor-js-input"></textarea>
+			</div>
+		</div>
+		<div class="editorOutputResizer"></div>
+		<div class="output">
+			<iframe class="output-frame" sandbox="allow-forms allow-same-origin allow-scripts allow-modals allow-popups"></iframe>
+		</div>
+	</div>
+	<script src="editor.js"></script>
+</body>
+</html>
