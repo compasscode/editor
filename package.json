@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "clean": "rm -rf assets/",
+    "build": "npm run clean && mkdir -p assets/ && npm run build:css",
+    "build:css": "postcss css/editor.css -o assets/editor.css",
+    "watch:css": "postcss css/editor.css -o assets/editor.css -w"
+  },
+  "devDependencies": {
+    "cssnano": "^3.10.0",
+    "postcss-cli": "^4.1.0",
+    "postcss-cssnext": "^3.0.2"
+  }
+}
