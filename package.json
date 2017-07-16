@@ -17,6 +17,7 @@
     "cssnano": "^3.10.0",
     "postcss-cli": "^4.1.0",
     "postcss-cssnext": "^3.0.2",
+    "postcss-import": "^10.0.0",
     "prcl": "^0.4.0",
     "uglifyify": "^4.0.2"
   },
