@@ -4,6 +4,7 @@ node_js:
 cache:
   directories:
     - "node_modules"
+install: yarn --production=false # install devDepdendencies
 script: yarn run build
 deploy:
   provider: pages
