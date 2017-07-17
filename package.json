@@ -2,10 +2,11 @@
   "scripts": {
     "clean": "rm -rf assets/",
     "build": "npm run clean && mkdir -p assets/ && npm run build:css && npm run build:js",
+    "watch": "concurrently --names \" js,css\" \"npm run watch:js\" \"npm run watch:css\"",
     "build:css": "postcss css/editor.css -o assets/editor.css",
     "watch:css": "postcss css/editor.css -o assets/editor.css -w",
-    "build:js": "browserify js/editor.js -o assets/editor.js -t [ babelify --presets [ es2015 es2016 es2017 ] --plugins [ transform-runtime ] ] -t uglifyify",
-    "watch:js": "prcl js/editor.js -o assets/editor.js -w"
+    "build:js": "if-env NODE_ENV=production && browserify js/editor.js -o assets/editor.js -t rollupify -t [ babelify --presets [ es2015 es2016 es2017 ] --plugins [ transform-runtime ] ] -t uglifyify || browserify js/editor.js -o assets/editor.js -d",
+    "watch:js": "watchify js/editor.js -o assets/editor.js -dv"
   },
   "devDependencies": {
     "babel-plugin-transform-runtime": "^6.23.0",
@@ -14,12 +15,15 @@
     "babel-preset-es2017": "^6.24.1",
     "babelify": "^7.3.0",
     "browserify": "^14.4.0",
+    "concurrently": "^3.5.0",
     "cssnano": "^3.10.0",
+    "if-env": "^1.0.0",
     "postcss-cli": "^4.1.0",
     "postcss-cssnext": "^3.0.2",
     "postcss-import": "^10.0.0",
-    "prcl": "^0.4.0",
-    "uglifyify": "^4.0.2"
+    "rollupify": "^0.4.0",
+    "uglifyify": "^4.0.2",
+    "watchify": "^3.9.0"
   },
   "dependencies": {}
 }
