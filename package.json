@@ -21,5 +21,7 @@
     "prcl": "^0.4.0",
     "uglifyify": "^4.0.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "marked": "^0.3.6"
+  }
 }

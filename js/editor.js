@@ -1,3 +1,45 @@
+const Tutorial = require('./Tutorial')
+
+let tut = Tutorial.from(`
+# Cool Tutorial
+~~~css
+body {
+  background-color: [$bgcolor];
+}
+~~~
+Try setting the **background-color** to **blue**, or any other color
+you can think of!
+~~~lock
+return [ 'red', 'green', 'blue' ].includes($bgcolor)
+~~~
+You can also set the text color to anything you like using CSS, using
+**color**. Try it!
+~~~css
+body {
+  background-color: <$bgcolor>;
+  color: [$color];
+}
+~~~
+~~~lock
+return [ 'red', 'green', 'blue' ].includes($color)
+~~~
+That's it! You're reached the end of this tutorial.
+
+~~~actualhtml
+<html>
+  <body></body>
+</html>
+~~~
+~~~actualcss
+body {
+  background-color: <$bgcolor>;
+  color: <$color>;
+}
+~~~
+`)
+
+console.log(tut)
+
 // Manipulates "event bubbling": https://stackoverflow.com/a/2457291/
 $("body").click(function(){
 	$(".nav-userDropdown").addClass("nav-userDropdown_hidden");
