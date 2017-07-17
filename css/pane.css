@@ -1,0 +1,11 @@
+.pane--light {
+	background: #44475a;
+}
+
+.pane--left {
+	border-right: 1px solid #44475a;
+}
+
+.pane--lang:not(:first-child) {
+	border-top: 1px solid #44475a;
+}

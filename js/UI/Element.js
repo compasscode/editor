@@ -14,5 +14,7 @@ export default class Element {
 
 		el.parent = this
 		this.el.appendChild(el.el)
+
+		return this
 	}
 }
