@@ -19,7 +19,7 @@
 	color: #8be9fd;
 	background-color: #282a36;
 
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.21);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, .4);
 
 	& .loader-text {
 		position: absolute;
