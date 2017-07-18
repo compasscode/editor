@@ -4,16 +4,21 @@ require('web-animations-js')
 import Element from './UI/Element'
 import Pane from './UI/Pane'
 import Codearea from './UI/Codearea'
+import Toolbar from './UI/Toolbar'
 
-const editor = new Pane('editor f--row')
-const leftPane = new Pane('pane--left f-g2 f--col')
-const rightPane = new Pane('pane--right f-g3')
+const toolbar = new Toolbar('toolbar')
+
+const page = new Pane('page')
+const help = new Pane('help')
+const editors = new Pane('editors')
+const output = new Pane('output')
+page.add(help).add(editors).add(output)
 
 // Add the output iframe to the right pane
-let iframe = editor.outputFrame = new Element('iframe', 'iframe--output')
+let iframe = new Element('iframe', 'iframe--output')
 iframe.el.setAttribute('sandbox', 'allow-modals allow-scripts allow-same-origin')
 iframe.el.src = 'about:blank'
-rightPane.add(iframe)
+output.add(iframe)
 
 // Add code panes to the left pane
 let langs = [ 'html', 'css', 'js' ]
@@ -21,20 +26,26 @@ let langpanes = langs.map(lang => {
 	let pane = new Pane(`pane--lang pane--lang-${lang} f-g1`)
 	let codearea = new Codearea(lang, iframe)
 
-	leftPane.add(pane.add(codearea))
+	editors.add(pane.add(codearea))
 	return pane
 })
 
 Pane.split(langpanes, {
-	minSize: 24,
+	minSize: 24, // BUG: minSize doesn't do anything (here or below)
 	gutterSize: 8,
 	snapOffset: 0,
 	direction: 'vertical',
 	cursor: 'row-resize',
 })
+Pane.split([editors, output], {
+	gutterSize: 8,
+	minSize: 100,
+	snapOffset: 0
+})
 
-// Add the editor to the body
-document.body.appendChild(editor.add(leftPane).add(rightPane).el)
+document.body.appendChild(toolbar.el)
+document.body.appendChild(page.el)
+
 
 // Reveal the editor underneath the
 // loader, then remove the loader.

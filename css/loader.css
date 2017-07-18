@@ -1,6 +1,6 @@
 .loader {
 	/* The loader is the thing that people will see
-	 	 when the editor/project is loading. */
+		 when the editor/project is loading. */
 
 	pointer-events: none;
 	user-select: none;
@@ -17,7 +17,7 @@
 	height: 100%;
 
 	color: #8be9fd;
-	background-color: #282a36;
+	background-color: var(--secondary-dark);
 
 	box-shadow: 0 2px 4px rgba(0, 0, 0, .4);
 
