@@ -1,0 +1,49 @@
+.gutter {
+	background: #ddd;
+	position: relative;
+}
+.gutter-horizontal {
+	cursor: ew-resize;
+}
+.gutter-vertical {
+	cursor: ns-resize;
+}
+.gutter::before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: #ddd;
+	border-radius: 999px;
+}
+.gutter-horizontal::before {
+	width: 12px;
+	height: 24px;
+}
+.gutter-vertical::before {
+	width: 24px;
+	height: 12px;
+}
+.gutter::after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border: 1px solid transparent;
+}
+.gutter-horizontal::after {
+	width: 4px;
+	height: 14px;
+	border-left-color: #bbb;
+	border-right-color: #bbb;
+}
+.gutter-vertical::after {
+	width: 14px;
+	height: 4px;
+	border-top-color: #bbb;
+	border-bottom-color: #bbb;
+}
