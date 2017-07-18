@@ -13,7 +13,7 @@
 	width: 56px;
 	height: 40px;
 	margin-left: 8px;
-	background: #fff4;
+	background-image: url(../img/logo.svg);
 }
 
 .toolbar-titleInput {
