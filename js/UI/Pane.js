@@ -7,26 +7,12 @@ export default class Pane extends Element {
 		super('div', className)
 		this.el.classList.add('pane')
 	}
-}
 
-export class ResizablePane extends Pane {
-	// A ResizablePane is a pane that is resizable,
-	// from north-to-south, from east-to-west, or
-	// simply in all directions.
-
-	static get NORTH_SOUTH() { return Symbol('NS')  }
-	static get EAST_WEST()   { return Symbol('EW')  }
-	static get ALL_AROUND()  { return Symbol('ALL_AROUND') }
-
-	constructor(className, direction = ResizablePane.ALL_AROUND) {
-		super(className)
-		this.el.classList.add('pane--resizable')
-
-		if ([ ResizablePane.NORTH_SOUTH, ResizablePane.EAST_WEST,
-		      ResizablePane.ALL_AROUND ].includes(direction))
-			this.resizeDirection = direction
-		else
-			throw new TypeError('ResizablePane: direction must be NORTH_SOUTH, '
-			                  + 'EAST_WEST, or ALL_AROUND')
+	// You can set a bunch of panes to be resizable
+	// using split(panes, opts). Options are passed
+	// directly to Split.js.
+	static split(panes, opts) {
+		const Split = require('split.js')
+		return Split(panes.map(pane => pane.el), opts)
 	}
 }
