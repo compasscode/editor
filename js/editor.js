@@ -1,8 +1,8 @@
 import 'babel-polyfill'
-import 'web-animations-js'
+require('web-animations-js')
 
 import Element from './UI/Element'
-import Pane, { ResizablePane } from './UI/Pane'
+import Pane from './UI/Pane'
 import Codearea from './UI/Codearea'
 
 const editor = new Pane('editor f--row')
@@ -17,12 +17,21 @@ rightPane.add(iframe)
 
 // Add code panes to the left pane
 let langs = [ 'html', 'css', 'js' ]
-for (let lang of langs) {
+let langpanes = langs.map(lang => {
 	let pane = new Pane(`pane--lang pane--lang-${lang} f-g1`)
 	let codearea = new Codearea(lang, iframe)
 
 	leftPane.add(pane.add(codearea))
-}
+	return pane
+})
+
+Pane.split(langpanes, {
+	minSize: 24,
+	gutterSize: 8,
+	snapOffset: 0,
+	direction: 'vertical',
+	cursor: 'row-resize',
+})
 
 // Add the editor to the body
 document.body.appendChild(editor.add(leftPane).add(rightPane).el)
