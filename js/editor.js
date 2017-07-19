@@ -4,9 +4,10 @@ require('web-animations-js')
 import Element from './UI/Element'
 import Pane from './UI/Pane'
 import Codearea from './UI/Codearea'
+import Nav from './UI/Nav'
 import Toolbar from './UI/Toolbar'
 
-const toolbar = new Toolbar('toolbar')
+const nav = new Nav('nav')
 
 const page = new Pane('page')
 const help = new Pane('help')
@@ -14,8 +15,11 @@ const editors = new Pane('editors')
 const output = new Pane('output')
 page.add(help).add(editors).add(output)
 
+const toolbar = new Toolbar('toolbar')
+output.add(toolbar)
+
 // Add the output iframe to the right pane
-let iframe = new Element('iframe', 'iframe--output')
+let iframe = new Element('iframe', 'output-iframe')
 iframe.el.setAttribute('sandbox', 'allow-modals allow-scripts allow-same-origin')
 iframe.el.src = 'about:blank'
 output.add(iframe)
@@ -43,7 +47,7 @@ Pane.split([editors, output], {
 	snapOffset: 0
 })
 
-document.body.appendChild(toolbar.el)
+document.body.appendChild(nav.el)
 document.body.appendChild(page.el)
 
 
