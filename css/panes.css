@@ -1,12 +1,19 @@
 .gutter {
 	background: #ddd;
 	position: relative;
+	border: 1px solid #bbb;
 }
 .gutter-horizontal {
 	cursor: ew-resize;
+	border-top: none;
+	border-bottom: none;
+	box-shadow: -1px 0 2px rgba(0,0,0,0.15);
 }
 .gutter-vertical {
 	cursor: ns-resize;
+	border-left: none;
+	border-right: none;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.15);
 }
 .gutter::before {
 	content: '';
@@ -20,11 +27,15 @@
 }
 .gutter-horizontal::before {
 	width: 12px;
-	height: 24px;
+	height: 28px;
+	box-shadow: 1px 0 0 #bbb,
+	            -1px 0 0 #bbb;
 }
 .gutter-vertical::before {
-	width: 24px;
+	width: 28px;
 	height: 12px;
+	box-shadow: 0 1px 0 #bbb,
+	            0 -1px 0 #bbb;
 }
 .gutter::after {
 	content: '';
