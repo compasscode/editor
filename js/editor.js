@@ -47,7 +47,7 @@ Pane.split([editors, output], {
 	snapOffset: 0
 })
 
-document.body.appendChild(nav.el)
+//document.body.appendChild(nav.el)
 document.body.appendChild(page.el)
 
 
