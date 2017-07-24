@@ -1,0 +1,35 @@
+@import 'vars.css';
+@import 'loader.css';
+@import 'panes.css';
+@import 'help.css';
+@import 'codearea.css';
+@import 'output.css';
+
+html, body {
+	margin: 0;
+	padding: 0;
+
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+
+body {
+	font-size: 16px;
+	display: flex;
+	flex-direction: column;
+}
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+.page {
+	flex-grow: 1;
+	display: flex;
+}
+
+.nav {
+	/* Remove the margin of the main site's nav, if we're running under it */
+	margin-bottom: 0;
+}

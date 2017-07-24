@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  "8"
+cache:
+  directories:
+    - "node_modules"
+install: yarn --production=false # install devDepdendencies
+script: yarn run build && echo "!assets/" >> .gitignore
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN # set in travis dashboard
+  on:
+    branch: master
+

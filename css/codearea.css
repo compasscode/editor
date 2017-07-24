@@ -1,0 +1,17 @@
+.codearea {
+	resize: none;
+
+	width: 100%;
+	height: 100%;
+
+	font-size: inherit;
+	font-family: monospace;
+
+	color: inherit;
+	background: none;
+	border: none;
+	outline: none;
+
+	overflow-x: auto;
+	overflow-y: scroll;
+}

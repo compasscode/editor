@@ -1,0 +1,38 @@
+.loader {
+	/* The loader is the thing that people will see
+		 when the editor/project is loading. */
+
+	pointer-events: none;
+	user-select: none;
+
+	z-index: 100;
+	will-change: transform;
+
+	position: absolute;
+	top: 56px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+
+	color: #8be9fd;
+	background-color: var(--secondary-dark);
+
+	box-shadow: 0 2px 4px rgba(0, 0, 0, .4);
+
+	& .loader-text {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		animation: loader-text 3s ease infinite;
+	}
+}
+
+@keyframes loader-text {
+	0%   { opacity: .2 }
+	50%  { opacity: 1  }
+	100% { opacity: .2 }
+}
